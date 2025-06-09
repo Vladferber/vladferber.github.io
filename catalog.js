@@ -11,7 +11,7 @@ const businessesData = [
       location: "Абакан",
       founded: "2015",
       employees: "100-200",
-      image: "C:/Users/SkyNetPC/Downloads/NqlGqttBXmQ.jpg",
+      image: "img/NqlGqttBXmQ.jpg",
     },
     {
       id: 2,
@@ -22,7 +22,7 @@ const businessesData = [
       location: "Абакан",
       founded: "2015",
       employees: "50-100",
-      image: "C:/Users/SkyNetPC/Downloads/bakaslasty.jpg",
+      image: "img/bakaslasty.jpg",
     },
     {
       id: 3,
@@ -33,7 +33,7 @@ const businessesData = [
       location: "Абакан",
       founded: "2018",
       employees: "30-50",
-      image: "C:/Users/SkyNetPC/Downloads/buterok.png",
+      image: "img/buterok.png",
     },
 ]
 
