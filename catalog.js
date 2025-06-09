@@ -35,6 +35,17 @@ const businessesData = [
       employees: "30-50",
       image: "img/buterok.png",
     },
+  {
+      id: 4,
+      name: "Фиточаи Хакасии",
+      category: "food",
+      categoryName: "Продукты питания",
+      description: "Производим фиточаи Хакасии со знаниями, опытом трёх поколений в траволечении и любовью к своему делу",
+      location: "Саяногорск",
+      founded: "2019",
+      employees: "10-30",
+      image: "img/fitochai.jpg",
+    },
 ]
 
 let filteredBusinesses = [...businessesData]
