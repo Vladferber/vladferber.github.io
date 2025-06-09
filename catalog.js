@@ -49,13 +49,13 @@ const businessesData = [
   {
       id: 5,
       name: "Абаканский трикотаж",
-      category: "food",
-      categoryName: "Продукты питания",
-      description: "Производим фиточаи Хакасии со знаниями, опытом трёх поколений в траволечении и любовью к своему делу",
-      location: "Саяногорск",
-      founded: "2019",
-      employees: "10-30",
-      image: "img/fitochai.jpg",
+      category: "textil",
+      categoryName: "Текстиль",
+      description: "Производство трикотажа и реализация трикотажных изделий высокого качества.",
+      location: "Абакан",
+      founded: "2014",
+      employees: "50-100",
+      image: "img/ат.png",
     },
 ]
 
