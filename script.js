@@ -335,7 +335,7 @@ function initCatalogPreview() {
       founded: "2015",
       employees: "50-100",
       image: "img/bakaslasty.jpg",
-      htmlFile: "business.html?id=2", // ← Временно используем динамическую страницу
+      htmlFile: "abakanskie-slasti.html", // ← Временно используем динамическую страницу
     },
     {
       id: 3,
