@@ -51,7 +51,7 @@ const businessesData = [
     founded: "2019",
     employees: "10-30",
     image: "img/fitochai.jpg",
-    htmlFile: "business.html?id=4", // ← Временно используем динамическую страницу
+    htmlFile: "fitochai-khakasii.html", // ← Временно используем динамическую страницу
   },
   {
     id: 5,
