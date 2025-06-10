@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>БутерОК | Сделано в Хакасии</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" href="img/Без имени-1 копия.svg" type="image/svg+xml">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Используем те же стили, что и для других страниц бизнеса */
+        .business-hero {
+            background-color: #f8fafc;
+            padding: 2rem 0;
+            margin-top: 120px;
+        }
+        
+        .business-header-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .business-logo {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #2c5f8b;
+        }
+        
+        .business-header-content {
+            flex: 1;
+        }
+        
+        .business-content {
+            padding: 2rem 0 4rem;
+        }
+        
+        .business-layout {
+            display: grid;
+            grid-template-columns: 3fr 1fr;
+            gap: 2rem;
+        }
+        
+        .business-main {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+        
+        .business-gallery {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .gallery-main {
+            height: 400px;
+            border-radius: 1rem;
+            overflow: hidden;
+        }
+        
+        .gallery-main img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .gallery-side {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        
+        .gallery-thumbnail {
+            height: calc(50% - 0.5rem);
+            border-radius: 1rem;
+            overflow: hidden;
+        }
+        
+        .gallery-thumbnail img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .business-info-card {
+            background-color: white;
+            border-radius: 1rem;
+            padding: 1.5rem;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            margin-bottom: 2rem;
+        }
+        
+        .business-info-card h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #1a2c3d;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .business-info-card h2 svg {
+            width: 24px;
+            height: 24px;
+            color: #2c5f8b;
+        }
+        
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 1rem;
+        }
+        
+        .product-item {
+            background-color: #f8fafc;
+            padding: 1rem;
+            border-radius: 0.75rem;
+            text-align: center;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border: 1px solid #e5e7eb;
+        }
+        
+        .product-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            border-color: #2c5f8b;
+        }
+        
+        .achievements {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1rem;
+        }
+        
+        .achievement-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            background-color: #f8fafc;
+            border-radius: 0.75rem;
+            transition: all 0.3s ease;
+            border: 1px solid #e5e7eb;
+        }
+        
+        .achievement-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            border-color: #2c5f8b;
+        }
+        
+        .achievement-icon {
+            font-size: 2rem;
+            color: #e74c3c;
+        }
+        
+        .business-sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+        
+        .contact-card {
+            background-color: white;
+            padding: 1.5rem;
+            border-radius: 1rem;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+        }
+        
+        .contact-card h3 {
+            margin-bottom: 1.5rem;
+            color: #1a2c3d;
+            font-size: 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .contact-card h3 svg {
+            width: 20px;
+            height: 20px;
+            color: #2c5f8b;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+            padding: 0.5rem 0;
+        }
+        
+        .contact-icon {
+            font-size: 1.2rem;
+            color: #2c5f8b;
+        }
+        
+        .program-badge {
+            background: linear-gradient(135deg, #2c5f8b 0%, #3a7cb9 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            text-align: center;
+        }
+        
+        .badge-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .badge-icon {
+            width: 5rem;
+            height: 5rem;
+            background-color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .badge-logo {
+            width: 3.5rem;
+            height: 3.5rem;
+        }
+        
+        .program-badge h4 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .business-stats-card {
+            display: flex;
+            justify-content: space-around;
+            background-color: white;
+            border-radius: 1rem;
+            padding: 1.5rem;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            margin-bottom: 2rem;
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #2c5f8b;
+            margin-bottom: 0.25rem;
+        }
+        
+        .stat-label {
+            font-size: 0.9rem;
+            color: #6b7280;
+        }
+        
+        .category-badge, .location-badge {
+            display: flex;
+            align-items: left;
+            padding: 0.5rem 1rem;
+            border-radius: 2rem;
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-right: 0.75rem;
+        }
+        
+        .category-badge {
+            background-color: rgba(44, 95, 139, 0.1);
+            color: #2c5f8b;
+        }
+        
+        .location-badge {
+            background-color: rgba(231, 76, 60, 0.1);
+            color: #e74c3c;
+        }
+        
+        .navigation-card {
+            background-color: white;
+            padding: 1.5rem;
+            border-radius: 1rem;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            text-align: center;
+        }
+
+        .navigation-card h3 {
+            margin-bottom: 1rem;
+            color: #1a2c3d;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .navigation-card h3 svg {
+            width: 20px;
+            height: 20px;
+            color: #2c5f8b;
+        }
+
+        .navigation-card p {
+            color: #6b7280;
+            margin-bottom: 1.5rem;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        .back-to-catalog-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            background-color: #2c5f8b;
+            color: white;
+            text-decoration: none;
+            border-radius: 2rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .back-to-catalog-btn:hover {
+            background-color: #3a7cb9;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(44, 95, 139, 0.3);
+        }
+
+        .back-to-catalog-btn svg {
+            width: 16px;
+            height: 16px;
+        }
+
+        
+        @media (max-width: 992px) {
+            .business-layout {
+                grid-template-columns: 1fr;
+            }
+            
+            .business-gallery {
+                grid-template-columns: 1fr;
+            }
+            
+            .gallery-side {
+                flex-direction: row;
+            }
+            
+            .gallery-thumbnail {
+                height: 150px;
+                width: 50%;
+            }
+            
+            .business-header-wrapper {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .business-stats-card {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .products-grid, .achievements {
+                grid-template-columns: 1fr 1fr;
+            }
+            
+            .gallery-side {
+                flex-direction: column;
+            }
+            
+            .gallery-thumbnail {
+                width: 100%;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .products-grid, .achievements {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header id="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="header-logos">
+                    <a href="https://мойбизнес19.рф">
+                        <img src="img/Мой_Бизнес_Хакасия_Векторный_логотип.svg" alt="Лого ЦМБ" class="header-logo logo-main">
+                    </a>
+                    <a href="https://мойбизнес19.рф">
+                        <img src="img/logo_fond_razvitiya.png" alt="Лого Фонда" class="header-logo logo-government">
+                    </a>
+                    <a href="index.html">
+                        <img src="img/Без имени-1 копия.svg" alt="Лого Сделано в Хакасии" class="header-logo logo-partner">
+                    </a>
+                </div>
+                
+                <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>    
+                <nav id="mainNav">
+                    <ul>
+                        <li><a href="catalog.html">Каталог</a></li>
+                        <li><a href="index.html#benefits">Преимущества</a></li>
+                        <li><a href="index.html#how-it-works">Как получить</a></li>
+                        <li><a href="index.html#requirements">Требования</a></li>
+                        <li><a href="index.html#faq">Вопросы</a></li>
+                        <li><a href="index.html#application-form-section" class="nav-cta">Подать заявку</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <section class="business-hero">
+        <div class="container">
+            <div class="business-header-wrapper">
+                <img src="img/buterok.png" alt="БутерОК" class="business-logo">
+                
+                <div class="business-header-content">
+                    <div class="business-badge">
+                        <span class="category-badge">Продукты питания</span>
+                        <span class="location-badge">📍 Абакан</span>
+                    </div>
+                    <h1>БутерОК</h1>
+                    <p>Производственная компания изготавливает охлаждённую и замораживаемую продукцию быстрого приготовления, такую как бутерброды, пицца, роллы, багеты и так далее.</p>
+                </div>
+            </div>
+            
+            <div class="business-stats-card">
+                <div class="stat-item">
+                    <div class="stat-value">2018</div>
+                    <div class="stat-label">Год основания</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">30-50</div>
+                    <div class="stat-label">Сотрудников</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">2024</div>
+                    <div class="stat-label">Участник программы с</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="business-content">
+        <div class="container">
+            <div class="business-layout">
+                <div class="business-main">
+                    <div class="business-gallery">
+                        <div class="gallery-main">
+                            <img src="img/buterok.png" alt="БутерОК" class="main-image">
+                        </div>
+                        <div class="gallery-side">
+                            <div class="gallery-thumbnail">
+                                <img src="C:/Users/SkyNetPC/Downloads/vladferber.github.io-main/vladferber.github.io-main/img/бутерокбодыв.jpg" alt="Производство" class="thumbnail-image">
+                            </div>
+                            <div class="gallery-thumbnail">
+                                <img src="C:/Users/SkyNetPC/Downloads/vladferber.github.io-main/vladferber.github.io-main/img/бутерокпродуксион.jpg" alt="Продукция" class="thumbnail-image">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="business-info-card">
+                        <h2>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M20 7h-9"></path>
+                                <path d="M14 17H5"></path>
+                                <circle cx="17" cy="17" r="3"></circle>
+                                <circle cx="7" cy="7" r="3"></circle>
+                            </svg>
+                            О компании
+                        </h2>
+                        <p>БутерОК — современная производственная компания, специализирующаяся на изготовлении охлаждённой и замораживаемой продукции быстрого приготовления. Основанная в 2018 году, компания быстро завоевала доверие потребителей благодаря высокому качеству продукции и инновационным подходам к производству.</p>
+                        <br>
+                        <p>Наш ассортимент включает разнообразные бутерброды, пиццу, роллы, багеты и другие продукты быстрого приготовления. Мы используем только свежие ингредиенты и современные технологии заморозки, что позволяет сохранить вкус и питательные свойства продуктов.</p>
+                        <br>
+                        <p>Компания активно развивается и расширяет географию поставок, обеспечивая жителей Хакасии и соседних регионов качественными продуктами быстрого приготовления.</p>
+                    </div>
+                    
+                    <div class="business-info-card">
+                        <h2>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                                <line x1="3" y1="6" x2="21" y2="6"></line>
+                                <path d="M16 10a4 4 0 0 1-8 0"></path>
+                            </svg>
+                            Наша продукция
+                        </h2>
+                        <div class="products-grid">
+                            <div class="product-item">🥪 Бутерброды</div>
+                            <div class="product-item">🍕 Пицца</div>
+                            <div class="product-item">🌯 Роллы</div>
+                            <div class="product-item">🥖 Багеты</div>
+                            <div class="product-item">🍔 Гамбургеры</div>
+                            <div class="product-item">🌮 Закуски</div>
+                        </div>
+                    </div>
+                    
+                    <div class="business-info-card">
+                        <h2>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="8" r="7"></circle>
+                                <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+                            </svg>
+                            Достижения и награды
+                        </h2>
+                        <div class="achievements">
+                            <div class="achievement-item">
+                                <span class="achievement-icon">✅</span>
+                                <span>Сертификат качества ГОСТ</span>
+                            </div>
+                            <div class="achievement-item">
+                                <span class="achievement-icon">🏅</span>
+                                <span>Участник программы "Сделано в Хакасии" с 2024 года</span>
+                            </div>
+                            <div class="achievement-item">
+                                <span class="achievement-icon">📈</span>
+                                <span>Стабильный рост производства с 2018 года</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="business-sidebar">
+                    <div class="program-badge">
+                        <div class="badge-content">
+                            <div class="badge-icon">
+                                <img src="img/Без имени-1 копия.svg" alt="Сделано в Хакасии" class="badge-logo">
+                            </div>
+                            <h4>Участник программы</h4>
+                            <p>"Сделано в Хакасии"</p>
+                        </div>
+                    </div>
+                    <div class="navigation-card">
+                        <h3>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                            Другие участники
+                        </h3>
+                        <p>Познакомьтесь с другими компаниями программы "Сделано в Хакасии"</p>
+                        <a href="catalog.html" class="back-to-catalog-btn">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
+                            </svg>
+                            Смотреть каталог
+                        </a>
+                    </div>
+                    <div class="contact-card">
+                        <h3>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                        </svg>
+                        Контактная информация
+                        </h3>
+                        <div class="contact-item">
+                            <span class="contact-icon">📞</span>
+                            <a href="tel:+7 (961) 741-48-48">+7 (961) 741-48-48</a>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-icon">✉️</span>
+                            <a href="buterok_abakan@mail.ru">buterok_abakan@mail.ru</a>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-icon">🌐</span>
+                            <a href="https://buterok.ru" target="_blank">buterok.ru</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <div class="footer-logos">
+                        <img src="img/Мой_Бизнес_Хакасия_Векторный_логотип.svg" alt="Центр Мой Бизнес" class="footer-logo">
+                        <img src="img/logo_fond_razvitiya.png" alt="Фонд Развития Хакасии" class="footer-logo">
+                    </div>
+                    <p>Официальный знак качества для продукции, произведенной в Республике Хакасия</p>
+                    <div class="social-links">
+                        <a href="https://ok.ru/group/64303052488939" class="social-link" aria-label="Одноклассники">
+                            <svg style="color: white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                <path d="M184.2 177.1c0-22.1 17.9-40 39.8-40s39.8 17.9 39.8 40c0 22-17.9 39.8-39.8 39.8s-39.8-17.9-39.8-39.8zM448 80v352c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V80c0-26.5 21.5-48 48-48h352c26.5 0 48 21.5 48 48zm-305.1 97.1c0 44.6 36.4 80.9 81.1 80.9s81.1-36.2 81.1-80.9c0-44.8-36.4-81.1-81.1-81.1s-81.1 36.2-81.1 81.1zm174.5 90.7c-4.6-9.1-17.3-16.8-34.1-3.6 0 0-22.7 18-59.3 18s-59.3-18-59.3-18c-16.8-13.2-29.5-5.5-34.1 3.6-7.9 16.1 1.1 23.7 21.4 37 17.3 11.1 41.2 15.2 56.6 16.8l-12.9 12.9c-18.2 18-35.5 35.5-47.7 47.7-17.6 17.6 10.7 45.8 28.4 28.6l47.7-47.9c18.2 18.2 35.7 35.7 47.7 47.9 17.6 17.2 46-10.7 28.6-28.6l-47.7-47.7-13-12.9c15.5-1.6 39.1-5.9 56.2-16.8 20.4-13.3 29.3-21 21.5-37z" fill="white"></path>
+                            </svg>
+                        </a>
+                        <a href="https://www.youtube.com/@moibiznes19" class="social-link" aria-label="YouTube">
+                            <svg style="color: white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                                <path d="M549.7 124.1c-6.3-23.7-24.8-42.3-48.3-48.6C458.8 64 288 64 288 64S117.2 64 74.6 75.5c-23.5 6.3-42 24.9-48.3 48.6-11.4 42.9-11.4 132.3-11.4 132.3s0 89.4 11.4 132.3c6.3 23.7 24.8 41.5 48.3 47.8C117.2 448 288 448 288 448s170.8 0 213.4-11.5c23.5-6.3 42-24.2 48.3-47.8 11.4-42.9 11.4-132.3 11.4-132.3s0-89.4-11.4-132.3zm-317.5 213.5V175.2l142.7 81.2-142.7 81.2z" fill="white"></path>
+                            </svg>
+                        </a>
+                        <a href="https://vk.com/moibiznes19" class="social-link" aria-label="ВКонтакте">
+                            <svg style="color: white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                <path d="M31.5 63.5C0 95 0 145.7 0 247V265C0 366.3 0 417 31.5 448.5C63 480 113.7 480 215 480H233C334.3 480 385 480 416.5 448.5C448 417 448 366.3 448 265V247C448 145.7 448 95 416.5 63.5C385 32 334.3 32 233 32H215C113.7 32 63 32 31.5 63.5zM75.6 168.3H126.7C128.4 253.8 166.1 290 196 297.4V168.3H244.2V242C273.7 238.8 304.6 205.2 315.1 168.3H363.3C359.3 187.4 351.5 205.6 340.2 221.6C328.9 237.6 314.5 251.1 297.7 261.2C316.4 270.5 332.9 283.6 346.1 299.8C359.4 315.9 369 334.6 374.5 354.7H321.4C316.6 337.3 306.6 321.6 292.9 309.8C279.1 297.9 262.2 290.4 244.2 288.1V354.7H238.4C136.3 354.7 78 284.7 75.6 168.3z" fill="white"></path>
+                            </svg>
+                        </a>
+                        <a href="https://t.me/moibizness19" class="social-link" aria-label="Telegram">
+                            <svg style="color: white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512">
+                                <path d="M248 8C111 8 0 119 0 256S111 504 248 504 496 393 496 256 385 8 248 8zM363 176.7c-3.7 39.2-19.9 134.4-28.1 178.3-3.5 18.6-10.3 24.8-16.9 25.4-14.4 1.3-25.3-9.5-39.3-18.7-21.8-14.3-34.2-23.2-55.3-37.2-24.5-16.1-8.6-25 5.3-39.5 3.7-3.8 67.1-61.5 68.3-66.7 .2-.7 .3-3.1-1.2-4.4s-3.6-.8-5.1-.5q-3.3 .7-104.6 69.1-14.8 10.2-26.9 9.9c-8.9-.2-25.9-5-38.6-9.1-15.5-5-27.9-7.7-26.8-16.3q.8-6.7 18.5-13.7 108.4-47.2 144.6-62.3c68.9-28.6 83.2-33.6 92.5-33.8 2.1 0 6.6 .5 9.6 2.9a10.5 10.5 0 0 1 3.5 6.7A43.8 43.8 0 0 1 363 176.7z" fill="white"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Навигация</h3>
+                    <ul>
+                        <li><a href="index.html">Главная</a></li>
+                        <li><a href="catalog.html">Каталог</a></li>
+                        <li><a href="index.html#benefits">Преимущества</a></li>
+                        <li><a href="index.html#how-it-works">Как получить</a></li>
+                        <li><a href="index.html#requirements">Требования</a></li>
+                        <li><a href="index.html#faq">Частые вопросы</a></li>
+                        <li><a href="index.html#apply">Подать заявку</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h3>Контакты</h3>
+                    <p><strong>Фонд развития Республики Хакасия</strong></p>
+                    <p>📍 655010, Республика Хакасия, г. Абакан, пр-т. Дружбы Народов, д.2а, стр.1, помещение 4Н.</p>
+                    <p>📞  8-800-350-37-53</p>
+                    <p>✉️ fondrh@mail.ru</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>© 2025 Фонд развития Республики Хакасия. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
