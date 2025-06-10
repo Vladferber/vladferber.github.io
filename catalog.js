@@ -23,7 +23,7 @@ const businessesData = [
     description:
       "Методом проб и ошибок, различных экспериментов, сочетанием, казалось бы, несочетаемого и появляются сладкие шедевры.",
     location: "Абакан",
-    founded: "2015",
+    founded: "2010",
     employees: "50-100",
     image: "img/bakaslasty.jpg",
     htmlFile: "abakanskie-slasti.html", // ← Временно используем динамическую страницу
