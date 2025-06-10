@@ -348,7 +348,7 @@ function initCatalogPreview() {
       founded: "2018",
       employees: "30-50",
       image: "img/buterok.png",
-      htmlFile: "business.html?id=3", // ← Временно используем динамическую страницу
+      htmlFile: "business-buterok.html", // ← Временно используем динамическую страницу
     },
     {
       id: 4,
