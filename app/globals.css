@@ -1,0 +1,224 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #2c5f8b;
+  --primary-light: #3a7cb9;
+  --secondary: #e74c3c;
+  --dark: #1a2c3d;
+  --light: #f8fafc;
+  --gray: #e5e7eb;
+  --text: #333333;
+  --text-light: #6b7280;
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 221 70% 36%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 6 78% 57%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 221 70% 36%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 217.2 91.2% 59.8%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 6 78% 57%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 224.3 76.3% 48%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+body {
+  color: var(--text);
+  line-height: 1.6;
+  overflow-x: hidden;
+  background-color: var(--light);
+}
+
+.hero {
+  position: relative;
+  width: calc(100% - 40px);
+  min-height: calc(100vh - 140px);
+  max-height: 800px;
+  display: flex;
+  align-items: center;
+  margin: 120px 20px 20px;
+  background-color: white;
+  overflow: hidden;
+  border-radius: 24px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: -30%;
+  right: -15%;
+  width: 70vmin;
+  height: 70vmin;
+  background: radial-gradient(circle, rgba(44, 95, 139, 0.05) 0%, rgba(44, 95, 139, 0) 70%);
+  border-radius: 50%;
+  z-index: 0;
+}
+
+.hero-content {
+  flex: 0 1 55%;
+  min-width: 500px;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-image {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  object-fit: contain;
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.how-it-works {
+  background-color: var(--primary);
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.how-it-works::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -20%;
+  width: 80vh;
+  height: 80vh;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 70%);
+  border-radius: 50%;
+  z-index: 0;
+}
+
+.step-number {
+  width: 6rem;
+  height: 6rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0 auto 2rem;
+  border: 2px solid white;
+}
+
+/* Адаптивные стили для hero секции */
+@media (max-width: 1200px) {
+  .hero {
+    width: calc(100% - 30px);
+    margin: 100px 15px 15px;
+    border-radius: 20px;
+  }
+
+  .hero::before {
+    right: -20%;
+    width: 60vmin;
+    height: 60vmin;
+  }
+
+  .hero-content {
+    min-width: 450px;
+  }
+}
+
+@media (max-width: 992px) {
+  .hero {
+    width: calc(100% - 20px);
+    min-height: auto;
+    margin: 100px 10px 10px;
+    border-radius: 18px;
+  }
+
+  .hero-content {
+    min-width: 100%;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    width: calc(100% - 16px);
+    margin: 100px 8px 8px;
+    border-radius: 16px;
+    padding: 80px 0 40px;
+  }
+
+  .hero-image {
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    width: calc(100% - 12px);
+    margin: 100px 6px 6px;
+    border-radius: 14px;
+    padding: 60px 0 30px;
+  }
+
+  .hero-image {
+    max-width: 250px;
+  }
+}
